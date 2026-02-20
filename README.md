@@ -21,5 +21,5 @@ When using sequential=True on creation of CriticEnsembles, the training time inc
 02-20 11:18:41 INFO     Episode:    7	N-steps:    3499	Reward:      0.048 (220 secs)
 
 
-As seen on these logs (run config found in objectrl/_logs/evogym-walker/td3/<seed>/<datetime>), every 500 steps take longer and longer durations. this pattern does not occur with leaky layers ONLY in the actor-network. I cannot get leaky layers to work with the critic networks in the CriticEnsemble of TD3, so I do not know how this affects training time (other than certainly making it take ~5x longer overall).
+As seen on these logs (run config found in objectrl/_logs/evogym-walker/td3/SEED/DATETIME), every 500 steps take longer and longer durations. this pattern does not occur with leaky layers ONLY in the actor-network. I cannot get leaky layers to work with the critic networks in the CriticEnsemble of TD3, so I do not know how this affects training time (other than certainly making it take ~5x longer overall).
 The samme pattern of increasingly longer training times apply when running on GPU.
