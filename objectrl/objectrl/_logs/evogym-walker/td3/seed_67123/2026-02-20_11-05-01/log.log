@@ -1,0 +1,110 @@
+02-20 11:05:01 INFO     Experiment with seed no 67123
+02-20 11:05:01 INFO     Args: 
+MainConfig(verbose=False, progress=False, config=PosixPath('objectrl/config/model_yamls/td3.yaml'), env=EnvConfig(name='evogym-walker', noisy=None, position_delay=None, control_cost_weight=None, sparse_rewards=False), training=TrainingConfig(learning_rate=0.0001, batch_size=64, gamma=0.99, max_steps=500000, warmup_steps=500, buffer_size=500000, reset_frequency=0, learn_frequency=1, max_iter=1, n_epochs=0, eval_episodes=1, eval_frequency=50000, parallelize_eval=False, optimizer='Adam'), model=TD3Config(name='td3', noise=ActorNoiseConfig(policy_noise=0.1, target_policy_noise=0.2, target_policy_noise_clip=0.5), loss='MSELoss', policy_delay=2, tau=0.005, actor=ActorConfig('activation': 'relu',
+ 'actor_type': <class 'objectrl.models.td3.TD3Actor'>,
+ 'arch': <class 'objectrl.nets.actor_nets.ActorNet'>,
+ 'depth': 3,
+ 'has_target': True,
+ 'max_grad_norm': 0.0,
+ 'n_actors': 1,
+ 'n_heads': 1,
+ 'norm': False,
+ 'reset': False,
+ 'width': 256), critic=CriticConfig('activation': 'relu',
+ 'arch': <class 'objectrl.nets.critic_nets.CriticNet'>,
+ 'critic_type': <class 'objectrl.models.td3.TD3Critic'>,
+ 'depth': 3,
+ 'has_target': True,
+ 'max_grad_norm': 0.0,
+ 'n_members': 2,
+ 'norm': False,
+ 'reduce': 'min',
+ 'reset': False,
+ 'target_reduce': 'min',
+ 'width': 256)), system=SystemConfig(num_threads=-1, seed=67123, random_seed=False, device='cpu', storing_device='cpu'), logging=LoggingConfig(result_path=PosixPath('objectrl/_logs'), save_frequency=20000, save_params=False))
+02-20 11:05:01 INFO     Model: 
+TwinDelayedDeepDeterministicPolicyGradient(
+  (critic): TD3Critic(
+    (loss): MSELoss()
+    (model_ensemble): Ensemble(
+      (models): ModuleList(
+        (0-1): 2 x CriticNet(
+          (arch): MLP(
+            (model): Sequential(
+              (0): Linear(in_features=96, out_features=256, bias=True)
+              (1): Leaky()
+              (2): Linear(in_features=256, out_features=256, bias=True)
+              (3): Leaky()
+              (4): Linear(in_features=256, out_features=1, bias=True)
+            )
+          )
+        )
+      )
+    )
+    (target_ensemble): Ensemble(
+      (models): ModuleList(
+        (0-1): 2 x CriticNet(
+          (arch): MLP(
+            (model): Sequential(
+              (0): Linear(in_features=96, out_features=256, bias=True)
+              (1): Leaky()
+              (2): Linear(in_features=256, out_features=256, bias=True)
+              (3): Leaky()
+              (4): Linear(in_features=256, out_features=1, bias=True)
+            )
+          )
+        )
+      )
+    )
+  )
+  (actor): TD3Actor(
+    (model): ActorNet(
+      (arch): Sequential(
+        (0): SNN(
+          (model): Sequential(
+            (0): Linear(in_features=74, out_features=512, bias=True)
+            (1): Softplus(beta=2, threshold=5)
+            (2): Leaky()
+            (3): Linear(in_features=512, out_features=512, bias=True)
+            (4): Leaky()
+            (5): Linear(in_features=512, out_features=512, bias=True)
+            (6): Leaky()
+            (7): Linear(in_features=512, out_features=512, bias=True)
+            (8): Leaky()
+            (9): Linear(in_features=512, out_features=22, bias=True)
+            (10): Leaky()
+          )
+        )
+        (1): Tanh()
+      )
+    )
+    (target): ActorNet(
+      (arch): Sequential(
+        (0): SNN(
+          (model): Sequential(
+            (0): Linear(in_features=74, out_features=512, bias=True)
+            (1): Softplus(beta=2, threshold=5)
+            (2): Leaky()
+            (3): Linear(in_features=512, out_features=512, bias=True)
+            (4): Leaky()
+            (5): Linear(in_features=512, out_features=512, bias=True)
+            (6): Leaky()
+            (7): Linear(in_features=512, out_features=512, bias=True)
+            (8): Leaky()
+            (9): Linear(in_features=512, out_features=22, bias=True)
+            (10): Leaky()
+          )
+        )
+        (1): Tanh()
+      )
+    )
+  )
+)
+02-20 11:05:03 INFO     Episode:    1	N-steps:     499	Reward:      0.023
+02-20 11:05:58 INFO     Episode:    2	N-steps:     999	Reward:     -0.020
+02-20 11:07:22 INFO     Episode:    3	N-steps:    1499	Reward:      0.057
+02-20 11:09:21 INFO     Episode:    4	N-steps:    1999	Reward:      0.021
+02-20 11:11:55 INFO     Episode:    5	N-steps:    2499	Reward:      0.035
+02-20 11:15:01 INFO     Episode:    6	N-steps:    2999	Reward:      0.044
+02-20 11:18:41 INFO     Episode:    7	N-steps:    3499	Reward:      0.048
+02-20 11:22:57 INFO     Episode:    8	N-steps:    3999	Reward:      0.062

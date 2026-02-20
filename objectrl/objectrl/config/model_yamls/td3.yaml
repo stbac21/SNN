@@ -1,0 +1,17 @@
+model:
+  name: "td3"
+env:
+  name: evogym-walker
+training:
+  n_epochs: 0
+  max_iter: 1
+  batch_size: 64
+  warmup_steps: 500
+  max_steps: 500_000
+  learn_frequency: 1
+  eval_frequency: 50_000
+  eval_episodes: 1
+  learning_rate: 0.0001
+  buffer_size: 500_000
+system:
+  seed: 67123

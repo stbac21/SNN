@@ -1,0 +1,6 @@
+model:
+  name: ppo
+training:
+  max_steps: 200_000
+  warmup_steps: 10000
+  n_epochs: 10
