@@ -1,0 +1,38 @@
+# Spiking Neural Network packages
+snntorch
+#norse
+
+# standard stuff
+matplotlib
+pandas
+gymnasium
+
+# CPU (default) version
+torch
+torchvision
+
+#for cartpole env
+#gymnasium[classic-control]
+
+imageio[ffmpeg]
+
+# either use with python3.12 (or newer) or include the following list of packages instead while ignoring objectrl
+#objectrl
+
+# packages needed on python3.10 cus objectrl only works with python3.12+ (NOTE: SYNTAX MODIFICATIONS MUST BE MADE TO ACCOMODATE PYTHON3.10 FOR OBJECTRL CODE)
+tyro
+tensordict
+torchrl
+tqdm
+PyYAML
+dm_env
+dm_control
+
+# works with python3.10, not with newer versions
+evogym
+
+# the PyQt6 package allows matplotlib to show plot gui when in non-interactive-window-mode or whatever idk just include it
+PyQt6 
+
+# idk what IPython is used for so its left out for now
+#IPython
